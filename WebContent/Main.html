@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Pantry</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://developer.edamam.com/attribution/badge.js"></script>
+</head>
+<body>
+
+	<h1 class="text-primary text-center">MyPantryRecipes</h1>
+	<div class="container">
+		<div class="row row-centered">
+			<div class="col-xs-6 col-centered"></div>
+			<div class="col-xs-6 col-centered"></div>
+			<div class="col-xs-3 col-centered"></div>
+			<div class="col-xs-3 col-centered"></div>
+			<div class="col-xs-3 col-centered"></div>
+			<div class="col-xs-3 col-centered">
+				<div class="text-center pull-right" id="edamam-badge"
+					data-color="white"></div>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="text-primary">Find recipes by:</h3>
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#home">Keyword</a></li>
+		<li><a data-toggle="tab" href="#menu1">My Ingredients</a></li>
+		<li><a data-toggle="tab" href="#menu2">I'm Feeling Lucky</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="home" class="tab-pane fade in active">
+			<div class="container">
+				<h4 class="text-primary text-center">Keyword Search</h4>
+				<form>
+					<div class="form-group">
+						<label for="">Search by one or more of the following:
+							ingredient, dish, keyword, or cuisine type.</label> <input
+							class="form-control" type="text">
+					</div>
+					<div class="form-group text-right">
+						<button class="btn btn-primary btn-lg" type="submit">
+							Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="menu1" class="tab-pane fade">
+			<div class="container">
+				<h4 class="text-primary text-center">My Pantry Search</h4>
+				<form>
+					<div class="form-group">
+						<label for="">Enter some keywords. You will only see
+							recipes that you have everything you need for.</label> <input
+							class="form-control" type="text">
+					</div>
+					<div class="form-group text-right">
+						<button class="btn btn-primary btn-lg" type="submit">
+							Search</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="menu2" class="tab-pane fade">
+			<div class="container">
+				<h4 class="text-primary text-center">I'm Feeling Lucky</h4>
+				<form class="text-center" action="MyPantry" method="POST">
+					<div class="form-group text-center">
+						<label for="">Get random recipes based on your
+							ingredients. Try some if you have a few ingredients and want to
+							pick up a few more, or all to only get results where you have
+							everything you need.</label>
+					</div>
+					<div class="panel-body">
+
+						<div class="control-group">
+							<div class="col-xs-6 text-right">
+								<button name="someLucky" class="btn btn-primary btn-lg"
+									type="submit">Some of My Ingredients</button>
+							</div>
+							<div class="col-xs-6 text-left">
+								<button name="allLucky" class="btn btn-primary btn-lg"
+									type="submit">All of My Ingredients</button>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" href="#collapseThree"> My Ingredients
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse">
+			<form action="SaveIngredients" method="GET" name="updateIngredients">
+				<div class="panel-body">
+					<div class="panel-group accordion" id="ingredientAccordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseThreeOne">
+										Vegetables </a>
+								</h4>
+							</div>
+
+							<div id="collapseThreeOne" class="panel-collapse collapse"
+								data-parent="#ingredientAccordion">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseDairy"> Dairy </a>
+								</h4>
+							</div>
+							<div id="collapseDairy" class="panel-collapse collapse"
+								data-parent="#ingredientAccordion">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseGrains"> Grains,
+										Pasta, & Baking </a>
+								</h4>
+							</div>
+							<div id="collapseGrains" class="panel-collapse collapse"
+								data-parent="#ingredientAccordion">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseMeats"> Meats </a>
+								</h4>
+							</div>
+							<div id="collapseMeats" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseSeafood"> Seafood
+									</a>
+								</h4>
+							</div>
+							<div id="collapseSeafood" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseLegumes"> Beans &
+										Legumes </a>
+								</h4>
+							</div>
+							<div id="collapseLegumes" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseFruits"> Fruits </a>
+								</h4>
+							</div>
+							<div id="collapseFruits" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseSpices"> Herbs &
+										Spices </a>
+								</h4>
+							</div>
+							<div id="collapseSpices" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseAlcohol"> Alcohol
+									</a>
+								</h4>
+							</div>
+							<div id="collapseAlcohol" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseCondiments">
+										Condiments </a>
+								</h4>
+							</div>
+							<div id="collapseCondiments" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapseOther"> Other </a>
+								</h4>
+							</div>
+							<div id="collapseOther" class="panel-collapse collapse">
+								<div class="panel-body">
+									<table class="table table-dark text-primary">
+
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-body text-center">
+					<button name="saveIngredients" class="btn btn-primary btn-lg"
+						type="submit">Save Ingredients</button>
+					<button class="btn btn-primary btn-lg" type="submit">Load
+						Ingredients</button>
+					<button class="btn btn-primary btn-lg" type="submit">Clear
+						Ingredients</button>
+					<button class="btn btn-primary btn-lg" type="submit">Check
+						All Ingredients</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<p class=text-primary>Here are a few ingredients you are missing:</p>
+	
+</body>
+</html>
