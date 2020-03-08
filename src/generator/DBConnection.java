@@ -19,7 +19,7 @@ public class DBConnection {
       
       connection = null;
       try {
-    	  connection = DriverManager.getConnection("jdbc:mysql://ec2-3-16-194-197.us-east-2.compute.amazonaws.com/MyPantry", "sckratochvil", "Marbichons1");	  
+    	  connection = DriverManager.getConnection("jdbc:mysql://ec2-3-16-194-197.us-east-2.compute.amazonaws.com/MyPantry", "sckratochvil", "falsePassword");	  
       } catch (Exception e) {
          System.out.println("Connection Failed! Check output console");
          e.printStackTrace();
